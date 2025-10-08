@@ -1,34 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Canvas } from '@react-three/fiber'
+import { Physics } from '@react-three/cannon'
 import './App.css'
+import { Table } from './game/entities/Table'
+import { Dice } from './game/entities/Dice'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <Canvas shadows camera={{ position: [6, 6, 6], fov: 50 }}>
+        <ambientLight intensity={0.6} />
+        <directionalLight castShadow intensity={0.8} position={[5, 8, 5]} />
+        <Physics gravity={[0, -20, 0]} allowSleep={false}>
+          <Table />
+          <Dice id="d1" position={[0, 2, 0]} />
+          <Dice id="d2" position={[1, 3, -0.5]} />
+        </Physics>
+      </Canvas>
+    </div>
   )
 }
 
