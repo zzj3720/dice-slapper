@@ -1,0 +1,80 @@
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.controls-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.slap-button {
+  pointer-events: auto;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 18px 40px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slap-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.slap-button:active,
+.slap-button.pressed {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.slap-icon {
+  font-size: 28px;
+  animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.slap-text {
+  line-height: 1;
+}
+
+.controls-hint {
+  color: #a0aec0;
+  font-size: 14px;
+  text-align: center;
+  background: rgba(26, 32, 44, 0.8);
+  padding: 8px 16px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}

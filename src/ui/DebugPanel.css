@@ -1,0 +1,170 @@
+.debug-panel {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.debug-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid #4a5568;
+  background: rgba(26, 32, 44, 0.9);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.debug-toggle:hover {
+  background: rgba(74, 85, 104, 0.9);
+  transform: scale(1.05);
+}
+
+.debug-content {
+  margin-top: 10px;
+  background: rgba(26, 32, 44, 0.95);
+  border: 2px solid #4a5568;
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 250px;
+  max-width: 350px;
+  max-height: 70vh;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.debug-content h3 {
+  margin: 0 0 15px 0;
+  color: #ecc94b;
+  font-size: 18px;
+  border-bottom: 2px solid #4a5568;
+  padding-bottom: 8px;
+}
+
+.debug-content h4 {
+  margin: 10px 0 8px 0;
+  color: #a0aec0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.debug-section {
+  margin-bottom: 15px;
+}
+
+.debug-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: rgba(74, 85, 104, 0.3);
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+.debug-label {
+  color: #cbd5e0;
+  font-size: 14px;
+}
+
+.debug-value {
+  color: #48bb78;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.debug-value.warning {
+  color: #f56565;
+}
+
+.debug-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  cursor: pointer;
+  color: #cbd5e0;
+  font-size: 14px;
+  transition: background 0.2s;
+  border-radius: 6px;
+}
+
+.debug-checkbox:hover {
+  background: rgba(74, 85, 104, 0.3);
+}
+
+.debug-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.debug-dice {
+  padding: 8px;
+  background: rgba(74, 85, 104, 0.3);
+  border-radius: 6px;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.debug-dice strong {
+  color: #ecc94b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.debug-dice-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #cbd5e0;
+  font-size: 12px;
+}
+
+.debug-button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.debug-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.debug-button:active {
+  transform: translateY(0);
+}
+
+.debug-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.debug-content::-webkit-scrollbar-track {
+  background: rgba(74, 85, 104, 0.3);
+  border-radius: 3px;
+}
+
+.debug-content::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 3px;
+}
+
+.debug-content::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
